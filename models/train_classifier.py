@@ -153,7 +153,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
         print(classification_report(Y_test[col], Y_prediction_df[col]))
         print('------------------------------------------------------')
     
-    accuracy = (Y_prediction == Y_test).mean().mean()
+    accuracy = np.mean(Y_prediction == Y_test.values)
     print(f"Accuracy: {accuracy:.2%}")
 
 def save_model(model, model_filepath):
